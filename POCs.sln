@@ -10,6 +10,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTenancy.Core", "Multi-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTenancy.App", "Multi-tenancy\MultiTenancy.App\MultiTenancy.App.csproj", "{11FA5344-A39D-41AF-9C4B-5F8CF44AE4BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContextGenerator", "SourceGenerators\ContextGenerator\ContextGenerator.csproj", "{6DEE8675-5BFA-49C1-A2FD-FAFDBC198B52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SourceGenerators", "SourceGenerators", "{8AE17021-053E-4C41-9494-7753A55F17B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +24,7 @@ Global
 		{274A1CAE-1D91-477A-B418-781B6D153345} = {D5F0D619-0D22-4AAC-BA04-54D39361A1AA}
 		{DB3033F9-A2B9-4F8A-A08F-650E044A5E63} = {D5F0D619-0D22-4AAC-BA04-54D39361A1AA}
 		{11FA5344-A39D-41AF-9C4B-5F8CF44AE4BD} = {D5F0D619-0D22-4AAC-BA04-54D39361A1AA}
+		{6DEE8675-5BFA-49C1-A2FD-FAFDBC198B52} = {8AE17021-053E-4C41-9494-7753A55F17B4}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{42809878-F699-4F8F-A910-A42FF6C6AECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -38,5 +43,9 @@ Global
 		{11FA5344-A39D-41AF-9C4B-5F8CF44AE4BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11FA5344-A39D-41AF-9C4B-5F8CF44AE4BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11FA5344-A39D-41AF-9C4B-5F8CF44AE4BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DEE8675-5BFA-49C1-A2FD-FAFDBC198B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DEE8675-5BFA-49C1-A2FD-FAFDBC198B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DEE8675-5BFA-49C1-A2FD-FAFDBC198B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DEE8675-5BFA-49C1-A2FD-FAFDBC198B52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

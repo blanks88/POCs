@@ -1,7 +1,9 @@
-﻿using MultiTenancy.Core.Models.Abstractions;
+﻿using ContextGenerator;
+using MultiTenancy.Core.Models.Abstractions;
 
 namespace MultiTenancy.Core.Models;
 
+[DatabaseEntity]
 public class Schedule : IEntity, ITenantBaseEntity
 {
     public Guid Id { get; set; }

@@ -1,23 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
 
-    <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0-rc.2" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0-rc.2"/>
+  </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\MultiTenancy.App\MultiTenancy.App.csproj" />
-      <ProjectReference Include="..\MultiTenancy.Core\MultiTenancy.Core.csproj" />
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SourceGenerators\ContextGenerator\ContextGenerator.csproj"
+                      ReferenceOutputAssembly="false"
+                      OutputItemType="Analyzer"
+    />
+    <ProjectReference Include="..\MultiTenancy.App\MultiTenancy.App.csproj"/>
+    <ProjectReference Include="..\MultiTenancy.Core\MultiTenancy.Core.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Context_Entities.cs" />
+  </ItemGroup>
 
 </Project>

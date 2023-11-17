@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\SourceGenerators\ContextGenerator\ContextGenerator.csproj" />
+  </ItemGroup>
+
 </Project>
