@@ -3,7 +3,7 @@ using MultiTenancy.Core.Models.Abstractions;
 
 namespace MultiTenancy.Core.Models;
 
-[DatabaseEntity]
+[EntityDbSet]
 public class Schedule : IEntity, ITenantBaseEntity
 {
     public Guid Id { get; set; }

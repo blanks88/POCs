@@ -2,7 +2,7 @@
 
 namespace MultiTenancy.Core.Models;
 
-[DatabaseEntity]
+[EntityDbSet]
 public class Game
 {
 }

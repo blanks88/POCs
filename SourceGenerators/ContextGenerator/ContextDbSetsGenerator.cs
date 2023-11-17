@@ -6,7 +6,9 @@ using Microsoft.CodeAnalysis.Text;
 namespace ContextGenerator;
 
 [Generator]
+#pragma warning disable RS1036
 public class ContextDbSetsGenerator : ISourceGenerator
+#pragma warning restore RS1036
 {
     public void Initialize(GeneratorInitializationContext context)
     {
@@ -14,35 +16,30 @@ public class ContextDbSetsGenerator : ISourceGenerator
 
     public void Execute(GeneratorExecutionContext context)
     {
-        // context.Compilation.GetAllSymbols();
-        // finding Core reference assembly Symbols
-        IAssemblySymbol assemblySymbol =
-            context.Compilation.SourceModule.ReferencedAssemblySymbols
-                .First(q => q.Name == "MultiTenancy.Core");
+        try
+        {
+            var members = context.Compilation
+                .GetSymbolsByAttribute<EntityDbSetAttribute>()
+                .ToList();
 
-        // use assembly symbol to get namespace and type symbols
-        // all members in namespace Core.Entities
-        var members = assemblySymbol.GlobalNamespace.GetNamespaceMembers()
-            .First(q => q.Name == "MultiTenancy")
-            .GetNamespaceMembers().First(q => q.Name == "Core")
-            .GetNamespaceMembers().First(q => q.Name == "Models")
-            .GetTypeMembers()
-            .Where(tm =>
-                tm.GetAttributes().Any(attr =>
-                    attr.AttributeClass?.Name == nameof(DatabaseEntityAttribute)))
-            .ToList();
-        
-        var sourceCode = GetSourceCodeFor(members);
+            var sourceCode = GetSourceCodeFor(members);
 
-        context.AddSource(
-            "Context.g.cs",
-            SourceText.From(sourceCode, Encoding.UTF8));
-        Console.WriteLine(sourceCode);
+            context.AddSource(
+                "Context.g.cs",
+                SourceText.From(sourceCode, Encoding.UTF8));
+
+            Console.WriteLine(sourceCode);
+        }
+        catch (Exception e)
+        {
+            throw new Exception(e.StackTrace);
+        }
     }
 
-    private string GetSourceCodeFor(IEnumerable<INamedTypeSymbol> entities, string? template = null)
+    private string GetSourceCodeFor(IEnumerable<INamedTypeSymbol> entities,
+        string? template = null)
     {
-        // If template isn't provieded, use default one from embeded resources.
+        // If template isn't provided, use default one from embedded resources.
         template ??= GetEmbededResource("ContextGenerator.Templates.Context.txt");
 
         // entities code

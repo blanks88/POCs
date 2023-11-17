@@ -8,7 +8,7 @@ public partial class Context(DbContextOptions<Context> opts)
     : DbContext(opts), ITenantBaseContext
 {
     public string TenantId { get; set; } = null!;
-
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
