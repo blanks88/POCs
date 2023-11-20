@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Schedules.API.Models;
 using Sidearm.V3.Core.Models;
@@ -34,7 +34,8 @@ public class Context(DbContextOptions<Context> options) : DbContext(options)
                     Title = "The Oklahoma Schedule #1",
                     Note = "Oklahoma #1",
                     CategoryId = Guid.NewGuid(),
-                    CreatedAt = DateTime.Now, ModifiedAt = null
+                    CreatedAt = DateTime.Now,
+                    ModifiedAt = null
                 },
                 new Schedule
                 {
@@ -47,7 +48,7 @@ public class Context(DbContextOptions<Context> options) : DbContext(options)
                 }
             );
     }
-    
+
     public override Task<int> SaveChangesAsync(CancellationToken ct = default)
     {
         foreach (EntityEntry<ITrackableEntity> entry in
@@ -67,7 +68,7 @@ public class Context(DbContextOptions<Context> options) : DbContext(options)
 
         return base.SaveChangesAsync(ct);
     }
-    
+
     /// <summary>
     /// Convert all date to utc
     /// </summary>

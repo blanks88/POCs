@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Schedules.API.Models;
 using Sidearm.V3.EntityFramework.Extensions;
@@ -29,5 +29,5 @@ public class ScheduleConfiguration : IEntityTypeConfiguration<Schedule>
         builder.SetAsTenantBase();
         builder.SetAsSoftDeletable();
     }
-    
+
 }

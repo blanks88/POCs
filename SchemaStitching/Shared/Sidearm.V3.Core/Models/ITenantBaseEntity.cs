@@ -1,4 +1,4 @@
-namespace Sidearm.V3.Core.Models;
+﻿namespace Sidearm.V3.Core.Models;
 
 public interface ITenantBaseEntity
 {

@@ -1,4 +1,4 @@
-using Sidearm.V3.Core.Models;
+﻿using Sidearm.V3.Core.Models;
 
 namespace Schedules.API.Models;
 

@@ -1,4 +1,4 @@
-using MultiTenancy.Core.Models;
+﻿using MultiTenancy.Core.Models;
 using MultiTenancy.Database;
 
 namespace MultiTenancyAPI.Queries;
