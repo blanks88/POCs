@@ -21,6 +21,15 @@ public static class TableConfigurationExtensions
             .IsRequired();
     }
 
+    public static void SetAsHiddable
+        <TEntity>(this EntityTypeBuilder<TEntity> builder)
+        where TEntity : class, IHiddableEntity
+    {
+        builder.Property(e => e.IsHidden)
+            .HasDefaultValue(false)
+            .IsRequired();
+    }
+
     public static void SetAsSoftDeletable
         <TEntity>(this EntityTypeBuilder<TEntity> builder)
         where TEntity : class, ISoftDeletableEntity
