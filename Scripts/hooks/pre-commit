@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# Modified from https://gist.github.com/EtherZa/581d9276336353838b2c939f9554d479
+#
+# This script finds the files that are about to be committed,
+# and runs dotnet format on them before adding them back to staging
+#
+# install dotnet-format: dotnet tool install -g dotnet-format
+# make sure installed dotnet tools are on your path:
+# export PATH="$PATH:$HOME/.dotnet/tools/"
+# copy to .git/hooks/pre-commit and make executable
+#
+
+FILES=$(git diff --cached --name-only --diff-filter=ACM "*.cs")
+echo "About to format"
+echo "$FILES"
+[ -z "$FILES" ] && exit 0
+
+echo "Running dotnet format for staged files"
+dotnet format --verbosity normal --include "$FILES"
+
+# Add back the modified files to staging
+echo "$FILES" | xargs git add
+
+echo "dotnet format done"
+exit 0

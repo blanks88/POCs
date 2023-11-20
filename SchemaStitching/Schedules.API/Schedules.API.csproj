@@ -20,8 +20,8 @@
     </ItemGroup>
   
     <ItemGroup>
-      <ProjectReference Include="..\Shared\Sidearm.V3.Core\Sidearm.V3.Core.csproj" />
-      <ProjectReference Include="..\Shared\Sidearm.V3.EntityFramework\Sidearm.V3.EntityFramework.csproj" />
+      <ProjectReference Include="..\..\Shared\Sidearm.V3.Core\Sidearm.V3.Core.csproj" />
+      <ProjectReference Include="..\..\Shared\Sidearm.V3.EntityFramework\Sidearm.V3.EntityFramework.csproj" />
     </ItemGroup>
 
 </Project>
