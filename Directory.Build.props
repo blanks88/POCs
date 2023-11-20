@@ -1,0 +1,6 @@
+<!--This file will define global build actions for inner projects-->
+<Project>
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);ASP0003;ASP0004;ASP0005;ASP0007;ASP0020;ASP0021;ASP0022;ASP0024</NoWarn>
+  </PropertyGroup>
+</Project>
