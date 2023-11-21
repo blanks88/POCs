@@ -8,7 +8,6 @@ builder.Services
     .AddGraphQLServer()
     .AddQueryType<SchedulesQuery>();
 
-
 var app = builder.Build();
 
 app.UseHttpsRedirection();
