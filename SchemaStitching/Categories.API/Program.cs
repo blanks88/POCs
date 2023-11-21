@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddDatabase()
     .AddGraphQLServer()
+    .ModifyOptions(t => t.EnableTag = false)
     .AddQueryType<CategoriesQuery>();
 
 var app = builder.Build();

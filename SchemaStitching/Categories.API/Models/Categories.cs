@@ -2,7 +2,7 @@
 
 namespace Categories.API.Models;
 
-public class Categories
+public record Categories
     : IHasIdEntity,
         ITenantBaseEntity,
         ITrackableEntity,

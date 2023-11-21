@@ -20,6 +20,7 @@ builder.Services
 // GraphQL
 builder.Services
     .AddGraphQLServer()
+    .ModifyOptions(t => t.EnableTag = false)
     .AddQueryType<SchedulesQuery>();
 
 var app = builder.Build();

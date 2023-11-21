@@ -2,7 +2,7 @@
 
 namespace Schedules.API.Models;
 
-public class Schedule : IHasIdEntity, ITenantBaseEntity, ITrackableEntity, ISoftDeletableEntity
+public record Schedule : IHasIdEntity, ITenantBaseEntity, ITrackableEntity, ISoftDeletableEntity
 {
     public Guid Id { get; set; }
     public string Tenant { get; set; } = null!;
