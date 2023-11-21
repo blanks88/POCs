@@ -1,4 +1,4 @@
-using API.Schemas;
+using API.Gateway.Schemas;
 
 var builder = WebApplication.CreateBuilder(args);
 

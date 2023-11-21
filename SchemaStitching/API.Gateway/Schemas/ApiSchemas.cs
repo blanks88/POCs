@@ -1,4 +1,4 @@
-﻿namespace API.Schemas;
+﻿namespace API.Gateway.Schemas;
 
 public static class ApiSchemas
 {
