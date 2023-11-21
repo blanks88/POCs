@@ -6,8 +6,12 @@ using Sidearm.V3.EntityFramework.Converters;
 
 namespace Categories.API.Database;
 
-public class Context(DbContextOptions<Context> options) : DbContext(options)
+public class Context : DbContext
 {
+    public Context(DbContextOptions<Context> options) : base(options)
+    {
+    }
+
     public DbSet<Models.Categories> Categories { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

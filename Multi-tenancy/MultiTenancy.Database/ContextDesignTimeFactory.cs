@@ -12,9 +12,16 @@ namespace MultiTenancy.Database;
 /// </summary>
 public class ContextDesignTimeFactory : IDesignTimeDbContextFactory<Context>
 {
-    private class TenantResolver(string? tenantName) : ITenantResolver
+    private class TenantResolver : ITenantResolver
     {
-        public string? GetTenantName() => tenantName;
+        private readonly string? _tenantName;
+
+        public TenantResolver(string? tenantName)
+        {
+            _tenantName = tenantName;
+        }
+
+        public string? GetTenantName() => _tenantName;
     }
 
     public Context CreateDbContext(string[] args)

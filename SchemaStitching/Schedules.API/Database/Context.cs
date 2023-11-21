@@ -6,8 +6,12 @@ using Sidearm.V3.EntityFramework.Converters;
 
 namespace Schedules.API.Database;
 
-public class Context(DbContextOptions<Context> options) : DbContext(options)
+public class Context : DbContext
 {
+    public Context(DbContextOptions<Context> options) : base(options)
+    {
+    }
+
     public DbSet<Schedule> Schedules { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

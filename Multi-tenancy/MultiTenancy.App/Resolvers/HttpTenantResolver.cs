@@ -4,16 +4,22 @@ using Microsoft.Extensions.Primitives;
 
 namespace MultiTenancy.App.Resolvers;
 
-public class HttpTenantResolver(IHttpContextAccessor httpContextAccessor)
-    : ITenantResolver
+public class HttpTenantResolver : ITenantResolver
 {
+    private readonly IHttpContextAccessor _httpContextAccessor;
+
+    public HttpTenantResolver(IHttpContextAccessor httpContextAccessor)
+    {
+        _httpContextAccessor = httpContextAccessor;
+    }
+
     private const string TenantParamName = "tenant";
 
     public string? GetTenantName() => GetTenantFromHeader() ?? GetTenantFromQuery();
 
     private StringValues? GetTenantFromHeader()
     {
-        if (httpContextAccessor.HttpContext?.Request.Headers
+        if (_httpContextAccessor.HttpContext?.Request.Headers
                 .TryGetValue(TenantParamName, out StringValues result)
             == true)
         {
@@ -24,7 +30,7 @@ public class HttpTenantResolver(IHttpContextAccessor httpContextAccessor)
     }
 
     private StringValues? GetTenantFromQuery()
-        => httpContextAccessor.HttpContext?.Request.Query[TenantParamName];
+        => _httpContextAccessor.HttpContext?.Request.Query[TenantParamName];
 }
 
 public static class Injector

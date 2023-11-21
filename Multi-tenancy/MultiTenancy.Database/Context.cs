@@ -4,9 +4,12 @@ using MultiTenancy.Core.Models.Abstractions;
 
 namespace MultiTenancy.Database;
 
-public partial class Context(DbContextOptions<Context> opts)
-    : DbContext(opts), ITenantBaseContext
+public partial class Context : DbContext, ITenantBaseContext
 {
+    public Context(DbContextOptions<Context> opts) : base(opts)
+    {
+    }
+
     public string TenantId { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
