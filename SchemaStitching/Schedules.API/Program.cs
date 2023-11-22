@@ -7,7 +7,7 @@ builder.Services
     .AddDatabase()
     .AddGraphQLServer()
     .ModifyOptions(t => t.EnableTag = false)
-    .AddQueryType<SchedulesQuery>();
+    .AddQueryType<Query>();
 
 var app = builder.Build();
 
@@ -15,5 +15,4 @@ app.UseHttpsRedirection();
 
 app.MapGraphQL();
 
-app.Run();
-
+app.RunWithGraphQLCommands(args);

@@ -3,7 +3,7 @@ using Schedules.API.Models;
 
 namespace Schedules.API.Queries;
 
-public class SchedulesQuery
+public class Query
 {
     public IQueryable<Schedule> GetSchedules([Service] Context db)
         => db.Schedules;
