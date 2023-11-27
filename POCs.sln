@@ -10,9 +10,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTenancy.Core", "Multi-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTenancy.App", "Multi-tenancy\MultiTenancy.App\MultiTenancy.App.csproj", "{11FA5344-A39D-41AF-9C4B-5F8CF44AE4BD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SchemaStitching", "SchemaStitching", "{5DA7E257-7681-4757-9575-E77D72619FAD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fusion", "Fusion", "{5DA7E257-7681-4757-9575-E77D72619FAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schedules.API", "SchemaStitching\Schedules.API\Schedules.API.csproj", "{6D861F13-04C9-4112-9BE8-EC9B33CC3B11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schedules.API", "Fusion\Schedules.API\Schedules.API.csproj", "{6D861F13-04C9-4112-9BE8-EC9B33CC3B11}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{430E8AD5-A6D1-4C99-9672-17DB60C4CA52}"
 EndProject
@@ -20,9 +20,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sidearm.V3.Core", "Shared\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sidearm.V3.EntityFramework", "Shared\Sidearm.V3.EntityFramework\Sidearm.V3.EntityFramework.csproj", "{D1EEB84B-F9DF-4D41-BDBD-04DB6A65E3AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Categories.API", "SchemaStitching\Categories.API\Categories.API.csproj", "{9AB3A147-5F41-4823-BF7F-F61BE6D06D9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Categories.API", "Fusion\Categories.API\Categories.API.csproj", "{9AB3A147-5F41-4823-BF7F-F61BE6D06D9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "SchemaStitching\Gateway\Gateway.csproj", "{D5EDBEA6-6B16-44C5-B51E-2AADCFDB0FBF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "Fusion\Gateway\Gateway.csproj", "{D5EDBEA6-6B16-44C5-B51E-2AADCFDB0FBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
