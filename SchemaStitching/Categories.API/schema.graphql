@@ -2,7 +2,7 @@
   query: Query
 }
 
-type Categories {
+type Category {
   id: UUID!
   tenant: String!
   title: String!
@@ -17,7 +17,8 @@ type Categories {
 }
 
 type Query {
-  categories: [Categories!]!
+  categories: [Category!]!
+  category(id: UUID!): Category
 }
 
 "The `@specifiedBy` directive is used within the type system definition language to provide a URL for specifying the behavior of custom scalar definitions."

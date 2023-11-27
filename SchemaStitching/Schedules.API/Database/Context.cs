@@ -22,9 +22,9 @@ public class Context(DbContextOptions<Context> options) : DbContext(options)
                 {
                     Id = Guid.NewGuid(),
                     Tenant = "Sidearmu",
-                    Title = "The Sidearm Schedule",
-                    Note = "Sidearm u note",
-                    CategoryId = Guid.NewGuid(),
+                    Title = "The Sidearm Schedule #1",
+                    Note = "Sidearm u note / category #1",
+                    CategoryId = Guid.Parse("402ab577-379f-4e42-86ea-9ecf2e454dd5"),
                     CreatedAt = DateTime.Now
                 },
                 new Schedule
@@ -33,7 +33,7 @@ public class Context(DbContextOptions<Context> options) : DbContext(options)
                     Tenant = "Oklahoma",
                     Title = "The Oklahoma Schedule #1",
                     Note = "Oklahoma #1",
-                    CategoryId = Guid.NewGuid(),
+                    CategoryId = Guid.Parse("402ab577-379f-4e42-86ea-9ecf2e454dd5"),
                     CreatedAt = DateTime.Now,
                     ModifiedAt = null
                 },
@@ -43,7 +43,25 @@ public class Context(DbContextOptions<Context> options) : DbContext(options)
                     Tenant = "Oklahoma",
                     Title = "The Oklahoma Schedule #2",
                     Note = "Oklahoma #2",
-                    CategoryId = Guid.NewGuid(),
+                    CategoryId = Guid.Parse("be4cc0d7-029c-45b6-a121-726a53ccd21a"),
+                    CreatedAt = DateTime.Now
+                },
+                new Schedule
+                {
+                    Id = Guid.NewGuid(),
+                    Tenant = "Oklahoma",
+                    Title = "The Oklahoma Schedule #3",
+                    Note = "Oklahoma #3",
+                    CategoryId = Guid.Parse("0fdc6594-102f-4f05-872b-6746b65bdee9"),
+                    CreatedAt = DateTime.Now
+                },
+                new Schedule
+                {
+                    Id = Guid.NewGuid(),
+                    Tenant = "Oklahoma",
+                    Title = "The Oklahoma Schedule #3.1",
+                    Note = "Oklahoma #3-1",
+                    CategoryId = Guid.Parse("0fdc6594-102f-4f05-872b-6746b65bdee9"),
                     CreatedAt = DateTime.Now
                 }
             );

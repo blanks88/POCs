@@ -4,9 +4,9 @@ using Sidearm.V3.EntityFramework.Extensions;
 
 namespace Categories.API.Database.Configurations;
 
-public class CategoryConfiguration : IEntityTypeConfiguration<Models.Categories>
+public class CategoryConfiguration : IEntityTypeConfiguration<Models.Category>
 {
-    public void Configure(EntityTypeBuilder<Models.Categories> builder)
+    public void Configure(EntityTypeBuilder<Models.Category> builder)
     {
         builder
             .Property(e => e.Title)

@@ -2,8 +2,14 @@
   query: Query
 }
 
+type Category {
+  id: UUID!
+  schedules: [Schedule!]!
+}
+
 type Query {
   schedules: [Schedule!]!
+  category(id: UUID!): Category!
 }
 
 type Schedule {

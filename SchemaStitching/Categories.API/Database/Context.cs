@@ -8,7 +8,7 @@ namespace Categories.API.Database;
 
 public class Context(DbContextOptions<Context> options) : DbContext(options)
 {
-    public DbSet<Models.Categories> Categories { get; set; }
+    public DbSet<Category> Categories { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -16,36 +16,36 @@ public class Context(DbContextOptions<Context> options) : DbContext(options)
 
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(Context).Assembly);
 
-        modelBuilder.Entity<Models.Categories>()
+        modelBuilder.Entity<Category>()
             .HasData(
-                new Models.Categories
+                new Category
                 {
                     Id = Guid.Parse("402ab577-379f-4e42-86ea-9ecf2e454dd5"),
                     Tenant = "Sidearmu",
-                    Title = "The Sidearm Category",
-                    Abbrev = "SC",
+                    Title = "The Sidearm Category #1",
+                    Abbrev = "SC#1",
                     ShortName = "SCat",
                     ShortDisplay = "Sidearm Category",
                     CreatedAt = DateTime.Now,
                 },
-                new Models.Categories
+                new Category
                 {
                     Id = Guid.Parse("be4cc0d7-029c-45b6-a121-726a53ccd21a"),
                     Tenant = "Oklahoma",
-                    Title = "The Oklahoma Category #1",
+                    Title = "The Oklahoma Category #2",
                     Abbrev = "OC1",
                     ShortName = "OklCategory#1",
-                    ShortDisplay = "Oklahoma Category #1",
+                    ShortDisplay = "Oklahoma Category #2",
                     CreatedAt = DateTime.Now,
                 },
-                new Models.Categories
+                new Category
                 {
                     Id = Guid.Parse("0fdc6594-102f-4f05-872b-6746b65bdee9"),
                     Tenant = "Oklahoma",
-                    Title = "The Oklahoma Category #2",
+                    Title = "The Oklahoma Category #3",
                     Abbrev = "OC2",
                     ShortName = "OklCategory#2",
-                    ShortDisplay = "Oklahoma Category #2",
+                    ShortDisplay = "Oklahoma Category #3",
                     CreatedAt = DateTime.Now
                 }
             );
